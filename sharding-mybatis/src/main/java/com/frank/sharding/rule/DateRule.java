@@ -83,8 +83,10 @@ public class DateRule extends ShardingRule {
 								table.table() + _1D, table.table() + _2D);
 					} else if (p1 == p2 && p1 == 1) {
 						reSql = reSql.replace(table.table(), table.table() + _1D);
+						ischange = true;
 					} else if (p1 == p2 && p1 == 2) {
 						reSql = reSql.replace(table.table(), table.table() + _2D);
+						ischange = true;
 					}
 				} else if (dates.size() == 1) {
 					int p = timePeriod(datesList.get(0));

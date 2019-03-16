@@ -131,11 +131,11 @@ public class SqlResolve {
         while (matcher.find()) {
             String qcloumn = matcher.group().trim();
             if (!StringUtils.isEmpty(qcloumn)) {
-                String[] funs = new String[] { "sum[(].*?[)].*?as.*?(?=,)|sum[(].*?[)].*?as.*?(?= )",
-                        "min[(].*?[)].*?as.*?(?=,)|min[(].*?[)].*?as.*?(?= )",
-                        "max[(].*?[)].*?as.*?(?=,)|max[(].*?[)].*?as.*?(?= )",
-                        "avg[(].*?[)].*?as.*?(?=,)|avg[(].*?[)].*?as.*?(?= )",
-                        "count[(].*?[)].*?as.*?(?=,)|count[(].*?[)].*?as.*?(?= )" };
+                String[] funs = new String[] { "sum[(].*?[)].*?as.*?(?=,)|sum[(].*?[)].*?as.*?(?= )|sum[(].*?[)]",
+                        "min[(].*?[)].*?as.*?(?=,)|min[(].*?[)].*?as.*?(?= )|min[(].*?[)]",
+                        "max[(].*?[)].*?as.*?(?=,)|max[(].*?[)].*?as.*?(?= )|max[(].*?[)]",
+                        "avg[(].*?[)].*?as.*?(?=,)|avg[(].*?[)].*?as.*?(?= )|avg[(].*?[)]",
+                        "count[(].*?[)].*?as.*?(?=,)|count[(].*?[)].*?as.*?(?= )|count[(].*?[)]" };
                 for (String freg : funs) {
                     pattern = Pattern.compile(freg);
                     matcher = pattern.matcher(qcloumn);
